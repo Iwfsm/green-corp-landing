@@ -4,6 +4,10 @@ body{
     margin: 0;
 }
 header{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,9 +39,25 @@ button{
 .about__image{
     width: 500px;
 }
+.about__images{
+    position: relative;
+}
+
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 .about__sun-image{
     width: 100px;
     height: 100px;
+    animation: rotation 10s linear infinite;
+    position:absolute;
+    top: 0;
+    left: 0;
 }
 .about{
     display: flex;
@@ -165,4 +185,66 @@ footer{
 }
 .footer__links a{
     margin-bottom: 15px;
+}
+@media (max-width: 720px){
+    .header__logo{
+        height: 20px;
+    }
+    header{
+        padding: 10px;
+    }
+    header a{
+        margin-right: 10px;
+    }
+    section{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .about h1{
+        font-size: 36px; 
+        line-height: 40px
+    }
+    .form{
+        padding: 50px 10px;
+    }
+    .form__container h1 {
+        font-size: 36px; 
+    }
+    .about{
+        flex-direction: column-reverse;
+        padding: 50px 10px;
+    }
+    .about__sun-image{
+        width: 75px;
+        height: 75px;
+    }
+    .about__image{
+        width: 280px;
+    }
+    .footer__container{
+        flex-direction: column;
+    }
+
+}
+@media (max-width: 1024px){
+    .about__image{
+        width: 280px;
+    }
+    .about__sun-image{
+        width: 75px;
+        height: 75px;
+    }
+    .about h1{
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .about{
+        padding: 115px 20px;
+    }
+}
+.about__images{
+    animation: fadeInRight 2s;
+}
+.about__info{
+    animation: fadeInLeft 2s;
 }
