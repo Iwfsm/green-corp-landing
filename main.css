@@ -192,12 +192,14 @@ footer{
 }
 .cards{
     display: grid;
+    grid-gap: 50px;
     grid-template-columns: 1fr 1fr 1fr;
 }
 .card{
     padding: 35px 40px 25px 40px;
     border: 1px solid #D9E4E6;
     border-radius: 5px;
+    background: #fff;
 }
 .card + .card{
     margin-left: 50px;
@@ -212,10 +214,8 @@ footer{
     width: 100px;
     font-size: 32px;
     font-weight: 700;
-    background-color: #eaeff9;
+    background: #eaeff9;
     border-radius: 50%;
-}
-.card__logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,6 +230,7 @@ footer{
     color: #22a030;
 }
 .features__border{
+    width: 100%;
     margin-top: 50px;
     margin-bottom: 50px;
     border: 1px solid #E6EAF4;
@@ -250,7 +251,7 @@ footer{
 }
 .features__feedback-right{
     display: flex;
-    align-items: center;
+    align-items: center;    
 }
 .features__box{
     padding: 30px 40px 25px 40px;
@@ -266,15 +267,17 @@ footer{
     background-color: #dc5e26;
     box-shadow: 0px 6px 0px rgb(221 95 38 / 20%);
     margin-right: 30px;
-    height: 180px;
+    
 }
 .features__rate-box{
     background-color: #1D263A;
     box-shadow: 0px 6px 0px rgb(29 38 58 / 20%);
-    height: 180px;
 }
-.features__rate-box .stars{
+.stars{
     color: #ff7039;
+}
+.promo{
+    display: flex;
 }
 .promo-left{
     width: 50%;
@@ -283,36 +286,32 @@ footer{
     background-image: url(../green-corp-landing/img/promo.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-}
-.promo{
-    display: flex;
+    flex-shrink: 0;
+    width: 50%;
 }
 .promo__right{
     background-color: #dd5f26;
     padding: 160px 60px;
-    width: 87%;
 }
 .promo__right-card{
     background-color: white;
     padding: 30px 40px;
     font-size: 20px;
-    line-height: 22px;
+    line-height: 26px;
     font-weight: 500;
     border-radius: 25px;
 }
-.promo__right-card p{
-    opacity: 0.8;
-}
-.promo__point{
-    color: #ec6b29;
+.promo__right-card p::before{
+    content: '';
     display: inline-block;
     width: 10px;
     height: 10px;
-    border-radius: 50px;
-    opacity: 80%;
+    border-radius: 50%;
+    background-color: #ec6b29;
     margin-right: 10px;
+}
+.promo__right-card p{
+    opacity: 0.8;
 }
 .promo-circle{
     list-style: none;
@@ -320,14 +319,15 @@ footer{
 .promo-btn{
     text-align: center;
 }
-.promo__btn{
+.promo__right-card button{
     background-color: #107b1c;
     margin-top: 20px;
     font-size: 18px;
     padding: 15px 30px;
-    font-weight: 500;
+    font-weight: 600;
+    box-shadow: 0 16px 36px rgb(16 122 28 / 30%);
 }
-.fa-chevron-right{
+.promo__button-wrap i{
     margin-left: 5px;
     font-size: 15px;
 }
@@ -387,11 +387,12 @@ footer{
     .features__feedback-left{
         margin-right: 0px;
     }
-    .features__feedback-left h2{
+    .features__feedback-left h2, .features__box h3{
         font-size:  36px;
     }
     .features__feedback-right{
-        display: block;
+        flex-direction: column;
+        align-items: initial;
     }
     .features__box h3{
         font-size: 36px;
