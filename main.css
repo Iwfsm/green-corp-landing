@@ -60,6 +60,7 @@ button{
     left: 0;
 }
 .about{
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -433,4 +434,10 @@ footer{
 }
 .about__info{
     animation: fadeInLeft 2s;
+}
+.orb-canvas{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
 }
