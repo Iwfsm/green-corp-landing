@@ -4,14 +4,22 @@ body{
     margin: 0;
 }
 header{
-    position: sticky;
+    position: fixed;
+    left: 0;
+    right: 0;
     top: 0;
-    background-color: #fff;
+    background: transparent;
     z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+}
+.header__scrolled{
+    background-color: #fff;
+    box-shadow:  0 12px 34px -11px rgb(65 62 101 / 10%);
 }
 .header__logo{
     height: 30px;
@@ -64,7 +72,7 @@ button{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 115px;
+    padding-top: 200px;
     padding-bottom: 115px;
     background: url('img/back.png') no-repeat;
     background-position: center;
